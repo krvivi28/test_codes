@@ -12,6 +12,6 @@ app.set("view engine", "ejs");
 app.set("views", "views");
 app.get("/", renderUploadForm);
 // app.post("/", imageUpload.single("image"), formValidation, registerUser);
-app.post("/", imageUpload.single("image"), registerUser);
+app.post("/upload", imageUpload.single("image"), registerUser);
 
 export default app;
