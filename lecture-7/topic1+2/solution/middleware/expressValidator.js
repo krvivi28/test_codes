@@ -2,11 +2,11 @@ import { body, validationResult } from "express-validator";
 
 export const formValidation = async (req, res, next) => {
   const rules = [
-    body("name").notEmpty().withMessage("name is required"),
-    body("email").isEmail().withMessage("enter valid email"),
+    body("name").notEmpty().withMessage("Name is required"),
+    body("email").isEmail().withMessage("Enter valid email"),
     body("image").custom((value, { req }) => {
       if (!req.file) {
-        throw new Error("profile image is required");
+        throw new Error("Profile image is required");
       } else return true;
     }),
   ];

@@ -1,0 +1,35 @@
+{
+  "runtime": 489,
+  "percentageScore": 100,
+  "count": {
+    "total": 2,
+    "passed": 2
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "Multipart Form Data Request",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should send a multipart form-data request"
+        }
+      ]
+    },
+    {
+      "suiteName": "form validation middleware using express-validator",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "Validate the user's name"
+        },
+        {
+          "passed": true,
+          "description": "Validate the user's email"
+        }
+      ]
+    }
+  ]
+}

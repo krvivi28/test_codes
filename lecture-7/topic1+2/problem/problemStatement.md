@@ -13,6 +13,7 @@ Objectives:
 3.Respond with appropriate error messages: "Name is required" for an empty name, "Enter a valid email" for an invalid email, and "Profile image is required" for an empty profile image.
 
 4.Create a file upload middleware inside "middleware/fileUploadMiddleware.js" to handle the successful submission of form data and profile image.
+Note: The images to be uploaded should be located within the "public/uploads" directory.
 
 Expected Output:
 
