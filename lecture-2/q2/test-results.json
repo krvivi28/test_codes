@@ -1,0 +1,25 @@
+{
+  "runtime": 297,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "codebase to comply with the ES6 module syntax",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should print sum of arr [100,10,1] to be 111"
+        },
+        {
+          "passed": true,
+          "description": "should mean of arr [100,10,1] to be 37"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "runtime": 707,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "Server is setup on port 8080",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "Server should send a response with the required text"
+        }
+      ]
+    }
+  ]
+}

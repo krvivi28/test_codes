@@ -1,0 +1,29 @@
+{
+  "runtime": 698,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "Node.js MVC App",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should render the blog form on GET /createblog"
+        },
+        {
+          "passed": true,
+          "description": "should render the blogs on GET /"
+        },
+        {
+          "passed": true,
+          "description": "should add a new blog on POST /addblog"
+        }
+      ]
+    }
+  ]
+}

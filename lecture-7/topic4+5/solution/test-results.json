@@ -1,0 +1,65 @@
+{
+  "runtime": 596,
+  "percentageScore": 100,
+  "count": {
+    "total": 5,
+    "passed": 5
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "GET /register",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "renders the user-register view"
+        }
+      ]
+    },
+    {
+      "suiteName": "GET /login",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "renders the user-login view"
+        }
+      ]
+    },
+    {
+      "suiteName": "POST /register",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "redirects to user-login view upon successful registration"
+        }
+      ]
+    },
+    {
+      "suiteName": "addUser",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should render the \"user-login\" view"
+        }
+      ]
+    },
+    {
+      "suiteName": "POST /login",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should authenticate user and send proper message"
+        },
+        {
+          "passed": true,
+          "description": "should authenticate user and send proper message"
+        }
+      ]
+    }
+  ]
+}

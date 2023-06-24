@@ -1,0 +1,21 @@
+{
+  "runtime": 575,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "Server runs correctly",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "It should return the required HTML File"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "runtime": 608,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "Secure Page Access with Express-Session",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should restrict access to secure-page.ejs for non-logged-in users"
+        }
+      ]
+    }
+  ]
+}

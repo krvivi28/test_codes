@@ -1,0 +1,25 @@
+{
+  "runtime": 428,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "Testing 'getProducts' function",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should ensure that when a user sends a GET request to port 3000 (/), the index.html file gets rendered."
+        },
+        {
+          "passed": true,
+          "description": "should send the index.html file"
+        }
+      ]
+    }
+  ]
+}

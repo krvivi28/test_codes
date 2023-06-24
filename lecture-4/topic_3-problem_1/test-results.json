@@ -1,0 +1,21 @@
+{
+  "runtime": 713,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "GET /test - logging",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "logs the request information"
+        }
+      ]
+    }
+  ]
+}

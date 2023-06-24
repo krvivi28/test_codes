@@ -1,0 +1,29 @@
+{
+  "runtime": 704,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "Form Validation",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should validate the form fields"
+        },
+        {
+          "passed": true,
+          "description": "should display error messages for invalid form fields"
+        },
+        {
+          "passed": true,
+          "description": "should display error messages for empty form fields"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "runtime": 729,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "Testing GET, POST, PUT, and DELETE requests",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "GET('/') should respond with the text messages 'get'"
+        },
+        {
+          "passed": true,
+          "description": "POST('/') should respond with the text messages 'post'"
+        },
+        {
+          "passed": true,
+          "description": "PUT('/') should respond with the text messages 'put'"
+        },
+        {
+          "passed": true,
+          "description": "DELETE('/') should respond with the text messages 'delete'"
+        }
+      ]
+    }
+  ]
+}

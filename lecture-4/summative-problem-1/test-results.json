@@ -1,0 +1,21 @@
+{
+  "runtime": 472,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "GET /index.html - serving static file",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "serves the index.html file"
+        }
+      ]
+    }
+  ]
+}

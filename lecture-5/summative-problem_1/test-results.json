@@ -1,0 +1,21 @@
+{
+  "runtime": 1524,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "Testing userController function and GET request('/users') at  ",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should check status and respose of GET request('/users')"
+        }
+      ]
+    }
+  ]
+}

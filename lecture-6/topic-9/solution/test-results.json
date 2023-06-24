@@ -1,0 +1,31 @@
+{
+  "runtime": 450,
+  "percentageScore": 100,
+  "count": {
+    "total": 2,
+    "passed": 2
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "POST /",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should update user data and render update-form view with updated user data"
+        }
+      ]
+    },
+    {
+      "suiteName": "updateUser",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should render the \"update-form\" view"
+        }
+      ]
+    }
+  ]
+}

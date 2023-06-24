@@ -1,0 +1,21 @@
+{
+  "runtime": 419,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "GET / - setCustomHeader",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "sets the custom header and sends the response"
+        }
+      ]
+    }
+  ]
+}

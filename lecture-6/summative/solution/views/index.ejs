@@ -1,0 +1,27 @@
+<%if(tasks){%>
+<div class="container p-5 gap-2 d-flex flex-wrap">
+  <% tasks.forEach((task)=>{ %>
+  <div class="card" style="width: 18rem">
+    <div class="card-header text-success">
+      <%=task.title%>
+      <a class="btn btn-sm btn-warning" href="/tasks/:id/edit">Edit</a>
+      <a class="btn btn-sm btn-danger" href="/tasks/:id/delete">Delete</a>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p><%=task.description%>.</p>
+        <footer class="blockquote-footer">
+          Complete By:
+          <cite class="text-danger" title="Source Title"><%=task.date%></cite>
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+  <%})%>
+</div>
+<%} else {%>
+<div class="container p-2">
+  <h1>No Tasks Found</h1>
+  <a class="btn btn-sm btn-success" href="/tasks/new">Add a new task</a>
+</div>
+<%}%>
