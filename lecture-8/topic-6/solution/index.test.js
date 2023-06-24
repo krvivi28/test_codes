@@ -1,7 +1,3 @@
-// const request = require("supertest");
-// const express = require("express");
-// const tweetRoutes = require("./src/features/tweet/tweet.routes");
-
 import request from "supertest";
 import express from "express";
 import tweetRoutes from "./src/features/tweet/tweet.routes.js";

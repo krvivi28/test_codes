@@ -1,0 +1,41 @@
+{
+  "runtime": 404,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "Art Piece API",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should create a new art piece"
+        },
+        {
+          "passed": true,
+          "description": "should retrieve all art pieces"
+        },
+        {
+          "passed": true,
+          "description": "should retrieve a specific art piece by ID"
+        },
+        {
+          "passed": true,
+          "description": "should update an art piece"
+        },
+        {
+          "passed": true,
+          "description": "should delete an art piece"
+        },
+        {
+          "passed": true,
+          "description": "should not retrieve a deleted art piece"
+        }
+      ]
+    }
+  ]
+}
