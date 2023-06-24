@@ -11,7 +11,6 @@ app.use(express.static(path.resolve("public")));
 app.set("view engine", "ejs");
 app.set("views", "views");
 app.get("/", renderUploadForm);
-// app.post("/", imageUpload.single("image"), formValidation, registerUser);
 app.post("/", imageUpload.single("image"), formValidation, registerUser);
 
 export default app;
