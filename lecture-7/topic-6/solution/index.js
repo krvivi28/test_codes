@@ -3,7 +3,7 @@ import path from "path";
 import expressEjsLayouts from "express-ejs-layouts";
 import UserController from "./src/controllers/user.controller.js";
 import session from "express-session";
-import { auth } from "./src/middleware/autj.js";
+import { auth } from "./src/middleware/auth.js";
 
 const userController = new UserController();
 
