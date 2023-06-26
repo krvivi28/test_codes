@@ -1,13 +1,11 @@
 {
-  "runtime": 428,
-  "percentageScore": 50,
+  "runtime": 324,
+  "percentageScore": 100,
   "count": {
     "total": 2,
-    "passed": 1
+    "passed": 2
   },
-  "failedTestCases": [
-    "test Protected route"
-  ],
+  "failedTestCases": [],
   "suites": [
     {
       "suiteName": "Secure Page Access with Express-Session",
@@ -20,12 +18,12 @@
       ]
     },
     {
-      "suiteName": "undefined",
-      "passed": false,
+      "suiteName": "Implement secure access to the 'secure-page.ejs' view",
+      "passed": true,
       "testCases": [
         {
-          "passed": false,
-          "description": "test Protected route"
+          "passed": true,
+          "description": "The 'secure-page.ejs' view should only be accessible to users who have logged in"
         }
       ]
     }

@@ -18,19 +18,21 @@ describe("Secure Page Access with Express-Session", () => {
   });
 });
 
-it("test Protected route", async () => {
-  const regResp = await request(app)
-    .post("/register")
-    .type("form")
-    .send({ name: "vivek", email: "krvivi28@gmail.com", password: "vivek28@" });
-  console.log(regResp.text);
-  const logResp = await request(app)
-    .post("/login")
-    .type("form")
-    .send({ email: "krvivi28@gmail.com", password: "vivek28@" });
-  console.log(logResp.text);
-  const response = await request(app).get("/");
-  expect(response.statusCode).toBe(200);
-  expect(response.text).toContain("there is always one more bug to fix");
-  console.log(response.text);
+describe("Implement secure access to the 'secure-page.ejs' view", () => {
+  it("The 'secure-page.ejs' view should only be accessible to users who have logged in", async () => {
+    const regResp = await request(app).post("/register").type("form").send({
+      name: "vivek",
+      email: "krvivi28@gmail.com",
+      password: "vivek28@",
+    });
+    const logResp = await request(app)
+      .post("/login")
+      .type("form")
+      .send({ email: "krvivi28@gmail.com", password: "vivek28@" });
+    const cookies = logResp.header["set-cookie"];
+    console.log(cookies);
+    const response = await request(app).get("/").set("Cookie", cookies);
+    expect(response.statusCode).toBe(200);
+    expect(response.text).toContain("There is always one more bug to fix");
+  });
 });

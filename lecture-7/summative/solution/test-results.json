@@ -1,25 +1,27 @@
 {
-  "runtime": 368,
-  "percentageScore": 0,
+  "runtime": 432,
+  "percentageScore": 100,
   "count": {
     "total": 1,
-    "passed": 0
+    "passed": 1
   },
-  "failedTestCases": [
-    "test Protected route"
-  ],
+  "failedTestCases": [],
   "suites": [
     {
       "suiteName": "GET /",
-      "passed": false,
+      "passed": true,
       "testCases": [
         {
           "passed": true,
           "description": "should redirect to login if user is not authenticated"
         },
         {
-          "passed": false,
-          "description": "test Protected route"
+          "passed": true,
+          "description": "The 'index.ejs' view should only be accessible to users who have logged in"
+        },
+        {
+          "passed": true,
+          "description": "'generateRandomNumber' inside the file 'middleware/generateRandomNumber.js' to generate a random number between 1 and 10. Set this number as a cookie named 'randomNumber' with a 1-day expiration."
         }
       ]
     }
