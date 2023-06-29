@@ -1,5 +1,5 @@
 {
-  "runtime": 445,
+  "runtime": 399,
   "percentageScore": 100,
   "count": {
     "total": 1,
@@ -8,12 +8,12 @@
   "failedTestCases": [],
   "suites": [
     {
-      "suiteName": "use axios to fetch data",
+      "suiteName": "Tests",
       "passed": true,
       "testCases": [
         {
           "passed": true,
-          "description": "should hit https://api.codingninjas.com/api/v3/event_tags API endpoint"
+          "description": "should handle POST requests, append the request body data to a file and send email to the user"
         }
       ]
     }

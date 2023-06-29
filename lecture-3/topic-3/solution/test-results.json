@@ -1,5 +1,5 @@
 {
-  "runtime": 445,
+  "runtime": 308,
   "percentageScore": 100,
   "count": {
     "total": 1,
@@ -8,12 +8,12 @@
   "failedTestCases": [],
   "suites": [
     {
-      "suiteName": "use axios to fetch data",
+      "suiteName": "An interface which takes a mail as input is created and mail is sent to that specific email",
       "passed": true,
       "testCases": [
         {
           "passed": true,
-          "description": "should hit https://api.codingninjas.com/api/v3/event_tags API endpoint"
+          "description": "sends an email to the specified user"
         }
       ]
     }

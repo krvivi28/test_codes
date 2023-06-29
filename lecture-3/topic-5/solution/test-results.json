@@ -1,5 +1,5 @@
 {
-  "runtime": 243,
+  "runtime": 329,
   "percentageScore": 100,
   "count": {
     "total": 1,
@@ -8,16 +8,16 @@
   "failedTestCases": [],
   "suites": [
     {
-      "suiteName": "codebase to comply with the ES6 module syntax",
+      "suiteName": "Server",
       "passed": true,
       "testCases": [
         {
           "passed": true,
-          "description": "should print sum of arr [100,10,1] to be 111"
+          "description": "should handle POST requests and append the request body data to a file"
         },
         {
           "passed": true,
-          "description": "should mean of arr [100,10,1] to be 37"
+          "description": "should read and print the contents of the file"
         }
       ]
     }

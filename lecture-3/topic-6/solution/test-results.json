@@ -1,5 +1,5 @@
 {
-  "runtime": 445,
+  "runtime": 278,
   "percentageScore": 100,
   "count": {
     "total": 1,
@@ -8,12 +8,12 @@
   "failedTestCases": [],
   "suites": [
     {
-      "suiteName": "use axios to fetch data",
+      "suiteName": "Fitness Tracker",
       "passed": true,
       "testCases": [
         {
           "passed": true,
-          "description": "should hit https://api.codingninjas.com/api/v3/event_tags API endpoint"
+          "description": "should update progress and emit 'goalReached' event when the goal is reached"
         }
       ]
     }

@@ -1,5 +1,5 @@
-import { mean, sum } from "./math.mjs";
-
+// import { mean, sum } from "./math.mjs";
+import { mean, sum } from "./math.js";
 describe("codebase to comply with the ES6 module syntax", () => {
   it("should print sum of arr [100,10,1] to be 111", () => {
     expect(sum([100, 10, 1])).toBe(111);
