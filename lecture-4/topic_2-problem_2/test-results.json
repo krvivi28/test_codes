@@ -1,5 +1,5 @@
 {
-  "runtime": 421,
+  "runtime": 456,
   "percentageScore": 100,
   "count": {
     "total": 1,
@@ -14,10 +14,6 @@
         {
           "passed": true,
           "description": "responds with 'Be a Coding Ninja.' when a GET request is made to '/'"
-        },
-        {
-          "passed": true,
-          "description": "prints the correct message to the console"
         }
       ]
     }

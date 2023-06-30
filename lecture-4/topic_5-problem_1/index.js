@@ -15,8 +15,4 @@ server.get("/", (req, res) => {
   res.send(`get method called!`);
 });
 
-// Start server on port 5000
-server.listen(5000, () => {
-  console.log("server is listening at 5000");
-});
-module.exports = setCustomHeader;
+module.exports = { setCustomHeader, server };

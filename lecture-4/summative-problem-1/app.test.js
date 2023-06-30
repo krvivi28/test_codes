@@ -1,7 +1,7 @@
 const request = require("supertest");
 const express = require("express");
 const path = require("path");
-const renderStatic = require(".");
+const { renderStatic } = require(".");
 
 describe("GET /index.html - serving static file", () => {
   let server;

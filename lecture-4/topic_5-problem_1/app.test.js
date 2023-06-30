@@ -1,6 +1,6 @@
 const request = require("supertest");
 const express = require("express");
-const setCustomHeader = require(".");
+const { setCustomHeader } = require(".");
 
 describe("GET / - setCustomHeader", () => {
   let app;
