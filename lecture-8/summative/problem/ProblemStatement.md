@@ -18,7 +18,9 @@ Implement an endpoint at '/api/artPieces/:id' to update the details of a specifi
 
 Implement an endpoint at '/api/artPieces/:id' to delete a specific art piece from the collection.
 
-Expected Output: A server that can handle all the CRUD operations for managing the digital art pieces via respective endpoints.
+Expected Output:
+A server that can handle all the CRUD operations for managing the digital art pieces via respective endpoints.
+Link: https://files.codingninjas.in/summative-28650.gif
 
 Resources:
 
