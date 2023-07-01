@@ -18,18 +18,3 @@ export const getArtPiece = (req, res) => {
 
   res.status(200).send(artPiece);
 };
-
-export const updateArtPiece = (req, res) => {
-  const artPiece = ArtPiece.update(req.params.id, req.body);
-
-  if (!artPiece) {
-    return res.status(404).send("Art piece not found");
-  }
-
-  res.status(200).send(artPiece);
-};
-
-export const deleteArtPiece = (req, res) => {
-  ArtPiece.delete(req.params.id);
-  res.status(204).send();
-};

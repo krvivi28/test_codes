@@ -43,19 +43,4 @@ export default class ArtPiece {
   static findOne(id) {
     return ArtPiece.db.find((art) => art.id == id);
   }
-
-  static update(id, data) {
-    const artPiece = ArtPiece.findOne(id);
-    if (artPiece) {
-      Object.assign(artPiece, data);
-    }
-    return artPiece;
-  }
-
-  static delete(id) {
-    const index = ArtPiece.db.findIndex((art) => art.id == id);
-    if (index !== -1) {
-      ArtPiece.db.splice(index, 1);
-    }
-  }
 }

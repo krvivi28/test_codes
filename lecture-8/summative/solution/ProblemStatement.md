@@ -14,10 +14,7 @@ Implement an endpoint at '/api/artPieces' to retrieve all art pieces in the coll
 
 Implement an endpoint at '/api/artPieces/:id' to retrieve a specific art piece by its id.
 
-Implement an endpoint at '/api/artPieces/:id' to update the details of a specific art piece.
-
-Implement an endpoint at '/api/artPieces/:id' to delete a specific art piece from the collection.
-
-Expected Output: A server that can handle all the CRUD operations for managing the digital art pieces via respective endpoints.
+Expected Output:
+A server that can handle all the CRUD operations for managing the digital art pieces via respective endpoints.
 
 Note: The 'id' of the art pieces should be unique and auto-incremented for every new art piece. It should not be provided in the request for creating a new art piece.

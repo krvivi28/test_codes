@@ -1,5 +1,5 @@
 {
-  "runtime": 404,
+  "runtime": 381,
   "percentageScore": 100,
   "count": {
     "total": 1,
@@ -22,18 +22,6 @@
         {
           "passed": true,
           "description": "should retrieve a specific art piece by ID"
-        },
-        {
-          "passed": true,
-          "description": "should update an art piece"
-        },
-        {
-          "passed": true,
-          "description": "should delete an art piece"
-        },
-        {
-          "passed": true,
-          "description": "should not retrieve a deleted art piece"
         }
       ]
     }

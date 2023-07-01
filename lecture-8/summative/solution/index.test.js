@@ -29,30 +29,4 @@ describe("Art Piece API", () => {
     );
     expect(response.body).toHaveProperty("id", createdArtPieceId);
   });
-
-  // Test case for updating an art piece
-  it("should update an art piece", async () => {
-    const response = await request(app)
-      .put(`/api/artPieces/${createdArtPieceId}`)
-      .send({
-        title: "Updated Title",
-      });
-    expect(response.body).toHaveProperty("id", createdArtPieceId);
-    expect(response.body).toHaveProperty("title", "Updated Title");
-  });
-
-  // Test case for deleting an art piece
-  it("should delete an art piece", async () => {
-    const response = await request(app).delete(
-      `/api/artPieces/${createdArtPieceId}`
-    );
-  });
-
-  // Test case for retrieving a deleted art piece
-  it("should not retrieve a deleted art piece", async () => {
-    const response = await request(app).get(
-      `/api/artPieces/${createdArtPieceId}`
-    );
-    expect(response.text).toMatch(/Art piece not found/i);
-  });
 });
