@@ -1,23 +1,22 @@
-const fs = require('fs');
-const readPkg = require('read-pkg');
-const path = require('path');
+import * as fs from "fs";
+import * as readPkg from 'read-pkg';
 
-module.exports = (testResults) => {
+export default function (testResults) {
     const testResultsString = JSON.stringify(testResults, null, 2);
-    output = {}
-    results = testResults.testResults[0].testResults;
-    failedTestCases = []
-    temp = {};
+    let output = {}
+    let results = testResults.testResults[0].testResults;
+    let failedTestCases = []
+    let temp = {};
     results.forEach(testCase => {
-        if(temp.hasOwnProperty(testCase.ancestorTitles[0])) {
-            testSuite = temp[testCase.ancestorTitles[0]];
-            tc = {
+        if (temp.hasOwnProperty(testCase.ancestorTitles[0])) {
+            let testSuite = temp[testCase.ancestorTitles[0]];
+            let tc = {
                 "passed": testCase.status === 'passed',
                 "description": testCase.title
             }
             testSuite.splice(testSuite.length, 0, tc);
             temp[testCase.ancestorTitles[0]] = testSuite;
-            if(testCase.status === 'failed') {
+            if (testCase.status === 'failed') {
                 failedTestCases.push(testCase.title);
             }
         } else {
@@ -27,25 +26,25 @@ module.exports = (testResults) => {
                     "description": testCase.title
                 }
             ]
-            if(testCase.status === 'failed') {
+            if (testCase.status === 'failed') {
                 failedTestCases.push(testCase.title);
             }
         }
     });
-    testSuites = []
+    let testSuites = []
     for (const [key, value] of Object.entries(temp)) {
-        ts = {
+        let ts = {
             suiteName: key,
             passed: value.every((tc) => tc.passed),
             testCases: value
         }
         testSuites.push(ts)
     }
-    count = {
+    let count = {
         "total": testSuites.length,
         "passed": testSuites.filter((obj) => obj.passed === true).length
     }
-    percentageScore = (count["passed"]/count["total"])*100
+    let percentageScore = (count["passed"] / count["total"]) * 100
     output = {
         "runtime": testResults.testResults[0].perfStats.runtime,
         "percentageScore": percentageScore
@@ -53,7 +52,7 @@ module.exports = (testResults) => {
     output["count"] = count;
     output["failedTestCases"] = failedTestCases;
     output["suites"] = testSuites
-    outputString = JSON.stringify(output, null, 2)
+    let outputString = JSON.stringify(output, null, 2)
 
     const packagedData = readPkg.sync(process.cwd())
     const config = packagedData.jestJsonReporter || {};

@@ -1,5 +1,6 @@
 import request from "supertest";
 import app from "./index.js";
+
 describe("Testing userController function and GET request('/users') at  ", () => {
   it("should check status and respose of GET request('/users')", async () => {
     const res = await request(app).get("/users");

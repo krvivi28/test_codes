@@ -1,4 +1,3 @@
-console.log("test case awaited");
 import express from "express";
 import path from "path";
 import { userController } from "./src/controllers/users.controller.js";
