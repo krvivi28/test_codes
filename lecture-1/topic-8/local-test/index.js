@@ -3,8 +3,9 @@ const http = require("http");
 const server = http.createServer((req, res) => {
   res.end("Response received at port 8080");
 });
-server.listen(8080);
-console.log("server is listening at port 8080");
+server.listen(8080, () => {
+  console.log("server is listening at port 8080");
+});
 
 module.exports = server;
 
