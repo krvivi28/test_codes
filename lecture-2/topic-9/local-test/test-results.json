@@ -1,5 +1,5 @@
 {
-  "runtime": 269,
+  "runtime": 234,
   "percentageScore": 100,
   "count": {
     "total": 1,
@@ -8,12 +8,12 @@
   "failedTestCases": [],
   "suites": [
     {
-      "suiteName": "test app.js",
+      "suiteName": "File Operations",
       "passed": true,
       "testCases": [
         {
           "passed": true,
-          "description": "it should append data to file note.txt,and then read with updated data"
+          "description": "should create, read and update a file and log the required content in the console"
         }
       ]
     }
