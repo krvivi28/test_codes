@@ -11,6 +11,11 @@ Objectives:
 4.Use Nodemailer library to send a confirmation email to a specified email address.
 5.Emit a custom event, "mailSent," to confirm successful email delivery.
 
+# email service credentials:
+
+mail: codingninjas2k16@gmail.com
+password: slwvvlczduktvhdj
+
 Expected Output:
 The solution should save the user's details to "queries.txt", send a confirmation email to the designated email address, and emit a "mailSent" event in the console upon successful email delivery.
 
