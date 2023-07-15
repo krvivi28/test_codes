@@ -1,0 +1,21 @@
+{
+  "runtime": 524,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "GET /api/product",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "The API should be accessible to users who have logged in with JWT."
+        }
+      ]
+    }
+  ]
+}
