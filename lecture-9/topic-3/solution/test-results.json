@@ -1,0 +1,31 @@
+{
+  "runtime": 499,
+  "percentageScore": 100,
+  "count": {
+    "total": 2,
+    "passed": 2
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "User Registeration API",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should add a new user to the 'users' array and respond with a JSON response with a status code of 201 indicating success"
+        }
+      ]
+    },
+    {
+      "suiteName": "User Login API",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should verify if a user attempting to log in is valid"
+        }
+      ]
+    }
+  ]
+}
