@@ -1,4 +1,3 @@
-// import basicAuth from "express-basic-auth";
 import { getAllUsers } from "../features/user/model/user.model.js";
 
 const basicAuthMiddleware = (req, res, next) => {
