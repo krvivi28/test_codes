@@ -5,12 +5,11 @@ import {
   getOneProduct,
   rateProduct,
 } from "../controller/product.controller.js";
-import authorizer from "../../../middlewares/basicAuth.js";
 
 const router = express.Router();
 
 // get routes
-router.route("/").get(authorizer, getAllProducts);
+router.route("/").get(getAllProducts);
 router.route("/:id").get(getOneProduct);
 
 // post routes

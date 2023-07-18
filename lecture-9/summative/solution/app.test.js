@@ -2,6 +2,11 @@ import request from "supertest";
 import app from "./index.js";
 
 describe("GET /api/product", () => {
+  it("The API should not be accessible to users without JWT cookie.", async () => {
+    const response = await request(app).get("/api/product");
+
+    expect(response.statusCode).toBe(401);
+  });
   it("The API should be accessible to users who have logged in with JWT.", async () => {
     const logResp = await request(app)
       .post("/api/user/login")

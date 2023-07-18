@@ -14,7 +14,7 @@ Allow only authenticated users with valid credentials to access the API.
 
 # Expected Output:
 
-GIF Link:
+GIF Link: https://files.codingninjas.in/basic-auth-29286.gif
 
 The expected outcome is to have the "/api/product" API accessible only to users who provide valid credentials. Unauthorized users should receive an authentication error or be denied access.
 

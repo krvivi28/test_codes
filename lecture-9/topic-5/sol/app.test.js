@@ -10,8 +10,6 @@ describe("Testing Product Api", () => {
   it("should respond with 401 Unauthorized without passing credentials", async () => {
     const response = await request(app).get("/api/product");
     expect(response.statusCode).toBe(401);
-    expect(response.header["www-authenticate"]).toBe("Basic");
-    console.log(response.header);
   });
 });
 

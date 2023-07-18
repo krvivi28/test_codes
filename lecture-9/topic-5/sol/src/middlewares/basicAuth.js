@@ -1,21 +1,27 @@
-import basicAuth from "express-basic-auth";
+// import basicAuth from "express-basic-auth";
 import { getAllUsers } from "../features/user/model/user.model.js";
 
-const basicAuthMiddleware = (email, password) => {
+const basicAuthMiddleware = (req, res, next) => {
   const users = getAllUsers();
-  const user = users.find((user) => {
-    return basicAuth.safeCompare(email, user.email);
-  });
-  if (user) {
-    return basicAuth.safeCompare(password, user.password);
-  } else {
-    console.log("invalid credentials");
+  const authHeader = req.headers["authorization"];
+  if (!authHeader) {
+    res
+      .status(401)
+      .json({ success: "false", message: "no authorization details found" });
   }
+
+  const base64Credentials = authHeader.replace("Basic ", "");
+  const decodedCreds = Buffer.from(base64Credentials, "base64").toString(
+    "utf-8"
+  );
+  const credentials = decodedCreds.split(":");
+  const validUser = users.find((user) => {
+    if (user.email === credentials[0] && user.password === credentials[1])
+      return user;
+  });
+  if (validUser) next();
+  else
+    res.status(401).json({ success: "false", message: "authorization failed" });
 };
 
-const authorizer = basicAuth({
-  authorizer: basicAuthMiddleware,
-  challenge: true,
-});
-
-export default authorizer;
+export default basicAuthMiddleware;

@@ -1,5 +1,5 @@
 {
-  "runtime": 524,
+  "runtime": 626,
   "percentageScore": 100,
   "count": {
     "total": 1,
@@ -11,6 +11,10 @@
       "suiteName": "GET /api/product",
       "passed": true,
       "testCases": [
+        {
+          "passed": true,
+          "description": "The API should not be accessible to users without JWT cookie."
+        },
         {
           "passed": true,
           "description": "The API should be accessible to users who have logged in with JWT."
