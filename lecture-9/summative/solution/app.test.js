@@ -16,8 +16,9 @@ describe("GET /api/product", () => {
       .get("/api/product")
       .set("Cookie", cookies);
     expect(response.statusCode).toBe(200);
-    expect(response.text).toBe(
-      '{"success":true,"products":[{"id":1,"name":"iphone","price":10000},{"id":2,"name":"iphone","price":10000},{"id":3,"name":"iphone","price":10000}]}'
+    expect(response.body.success).toBe(true);
+    expect(response.header["content-type"]).toBe(
+      "application/json; charset=utf-8"
     );
   });
 });

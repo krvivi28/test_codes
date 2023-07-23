@@ -18,6 +18,11 @@ describe("Testing Product Api", () => {
     const response = await request(app)
       .get("/api/product")
       .set("Authorization", authHeader);
+    console.log(response);
     expect(response.statusCode).toBe(200);
+    expect(response.header["content-type"]).toBe(
+      "application/json; charset=utf-8"
+    );
+    expect(response.body.success).toBe(true);
   });
 });

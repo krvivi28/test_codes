@@ -1,5 +1,5 @@
 {
-  "runtime": 499,
+  "runtime": 512,
   "percentageScore": 100,
   "count": {
     "total": 2,
@@ -23,7 +23,11 @@
       "testCases": [
         {
           "passed": true,
-          "description": "should verify if a user attempting to log in is valid"
+          "description": "should verify(with incorrect credentials) if a user attempting to log in is valid or not"
+        },
+        {
+          "passed": true,
+          "description": "should verify(with correct credentials), if a user attempting to log in is valid or not"
         }
       ]
     }

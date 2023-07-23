@@ -2,7 +2,7 @@
 
 # Introduction + Scenario:
 
-In this problem, you are tasked with securing the "/api/product" route using express-basic authentication. The scenario involves a web application that provides user login and registration APIs, along with a product API to fetch all products. To ensure data privacy and restrict access, you need to implement the "basicAuthMiddleware" to allow only authenticated users with valid credentials to access the "/api/product" API.
+In this problem, you are tasked with securing the "/api/product" route using basic-authentication. The scenario involves a web application that provides user login and registration APIs, along with a product API to fetch all products. To ensure data privacy and restrict access, you need to implement the "basicAuthMiddleware" to allow only authenticated users with valid credentials to access the "/api/product" API.
 
 # Objectives:
 
@@ -20,7 +20,7 @@ The expected outcome is to have the "/api/product" API accessible only to users 
 
 # Notes/Hints:
 
-Use the provided user login and registration APIs.
-Consider using middleware to handle authentication.
-Research how to implement basic authentication in Express.
-Remember to test the solution to ensure it functions as expected.
+1.Product Api should respond with 401 Unauthorized without passing credentials and 200 with basic authentication.
+2.Use the provided user login and registration APIs.
+3.Consider using middleware to handle authentication.
+4.Remember to test the solution to ensure it functions as expected.

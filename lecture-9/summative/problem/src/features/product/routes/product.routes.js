@@ -5,9 +5,7 @@ import {
   getOneProduct,
   rateProduct,
 } from "../controller/product.controller.js";
-import authorizer from "../../../middlewares/basicAuth.js";
 import jwtAuth from "../../../middlewares/jwtAuth.js";
-
 
 const router = express.Router();
 
