@@ -1,0 +1,31 @@
+import { addToCart, removeFromCart } from "../model/cart.model.js";
+
+export const addToCartController = (req, res) => {
+  const { productId, quantity } = req.query;
+  const userId = req.userId;
+  if (!productId || !quantity) {
+    res
+      .status(400)
+      .json({ success: false, msg: "invalid productId or quantity" });
+  }
+  let addStatus = addToCart(userId, productId, quantity);
+  if (addStatus.success) {
+    return res.status(201).json(addStatus);
+  } else {
+    res.status(400).json({ success: false, msg: "some error occured" });
+  }
+  res.send(req.query);
+};
+
+export const removeFromCartController = (req, res) => {
+  const userId = req.userId;
+  const itemId = req.params.itemId;
+  console.log(userId, itemId);
+  const resp = removeFromCart(userId, itemId);
+  console.log(resp);
+  if (resp.success) {
+    return res.status(200).json(resp);
+  } else {
+    return res.status(400).json(resp);
+  }
+};
