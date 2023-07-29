@@ -24,6 +24,13 @@ Upon successful deletion, the "removeFromCartController" should respond with:
 "deletedCartItem": [deleted item details]
 }
 
+"If the 'removeFromCartController' receives an invalid ID for the cart item deletion, it should respond with:
+
+{
+"success": false,
+"msg": "operation not allowed"
+}"
+
 GIF Link: https://files.codingninjas.in/cart-29572.gif
 
 # Notes/Hints:
