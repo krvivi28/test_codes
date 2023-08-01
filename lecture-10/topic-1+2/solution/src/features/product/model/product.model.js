@@ -16,13 +16,13 @@ export const rateProductModel = (productId, userId, rating) => {
     return user.id == userId;
   });
   if (!user) {
-    return { status: true, res: "user not found" };
+    return { status: false, res: "user not found" };
   }
   const product = products.find((product) => {
     return product.id == productId;
   });
   if (!product) {
-    return { status: true, res: "product not found" };
+    return { status: false, res: "product not found" };
   }
 
   if (!product.ratings) {

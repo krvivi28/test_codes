@@ -1,5 +1,5 @@
 {
-  "runtime": 584,
+  "runtime": 439,
   "percentageScore": 100,
   "count": {
     "total": 1,
@@ -8,16 +8,24 @@
   "failedTestCases": [],
   "suites": [
     {
-      "suiteName": "GET /api/product",
+      "suiteName": "GET /api/product/rateproduct",
       "passed": true,
       "testCases": [
         {
           "passed": true,
-          "description": "The API should not be accessible to users without JWT cookie."
+          "description": "should provide a successful response containing the product details, including the updated ratings, in case of valid input"
         },
         {
           "passed": true,
-          "description": "The API should be accessible to users who have logged in with JWT."
+          "description": "For invalid user ID:"
+        },
+        {
+          "passed": true,
+          "description": "For invalid product ID:"
+        },
+        {
+          "passed": true,
+          "description": "For invalid rating"
         }
       ]
     }

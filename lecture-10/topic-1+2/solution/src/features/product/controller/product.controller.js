@@ -13,6 +13,12 @@ export const addProduct = (req, res, next) => {
 export const rateProduct = (req, res, next) => {
   const { userId, productId, rating } = req.query;
   console.log(userId, productId, rating);
+  if (rating > 5) {
+    res.json({
+      success: false,
+      msg: "rating should be b/w 0 and 5",
+    });
+  }
   const modelResp = rateProductModel(productId, userId, rating);
   if (modelResp.status) res.json({ success: true, msg: modelResp.res });
   else res.status(401).json({ success: false, msg: modelResp.res });

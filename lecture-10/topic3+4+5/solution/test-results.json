@@ -1,5 +1,5 @@
 {
-  "runtime": 584,
+  "runtime": 488,
   "percentageScore": 100,
   "count": {
     "total": 1,
@@ -8,16 +8,12 @@
   "failedTestCases": [],
   "suites": [
     {
-      "suiteName": "GET /api/product",
+      "suiteName": "POST /api/cart",
       "passed": true,
       "testCases": [
         {
           "passed": true,
-          "description": "The API should not be accessible to users without JWT cookie."
-        },
-        {
-          "passed": true,
-          "description": "The API should be accessible to users who have logged in with JWT."
+          "description": "The API should should not allow users to add a product to the cart if not logged In"
         }
       ]
     }

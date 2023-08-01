@@ -6,10 +6,11 @@ You are working on an E-commerce project and have been assigned the task of impl
 
 # Objectives:
 
-Implement a "rateProduct" controller for the route "api/product/rateproduct" that handles user ratings for products.
+Implement the "rateProduct" controller for the route "api/product/rateproduct" that handles user ratings for products.
 Validate user input for user ID, product ID, and rating, responding with appropriate JSON objects for invalid cases.
 Ensure that product ratings fall within the range of 0 to 5.
 Provide a successful response containing the product details, including the updated ratings, in case of valid input.
+
 Expected Output:
 
 GIF LINK: https://files.codingninjas.in/filterproduct-29549.gif
