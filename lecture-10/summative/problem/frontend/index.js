@@ -1,9 +1,8 @@
 let empList = [];
 const htmlList = document.getElementById("objectList");
 const renderData = async () => {
-  // Please don't change the pre-written code
-  // Write your code here
-
+  const res = await fetch("http://localhost:4000/api/v1/emp");
+  empList = await res.json();
   empList.forEach((obj) => {
     const listItem = document.createElement("li");
     listItem.innerText = `ID: ${obj.emp_id}, Name: ${obj.name}, Category: ${obj.company}`;
