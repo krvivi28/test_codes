@@ -15,10 +15,10 @@ export const addUser = (data) => {
   return newUser;
 };
 addUser({ name: "vivek", email: "krvivi28@gmail.com", password: "vivek28@" });
-addUser({ name: "Ankur", email: "krvivi28@gmail.com", password: "vivek28@" });
+addUser({ name: "Ankur", email: "ankur@gmail.com", password: "vivek28@" });
 addUser({
   name: "Abhishek",
-  email: "krvivi28@gmail.com",
+  email: "abhi@gmail.com",
   password: "vivek28@",
 });
 

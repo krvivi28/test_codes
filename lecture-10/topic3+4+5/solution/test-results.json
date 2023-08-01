@@ -1,9 +1,9 @@
 {
-  "runtime": 488,
+  "runtime": 484,
   "percentageScore": 100,
   "count": {
-    "total": 1,
-    "passed": 1
+    "total": 2,
+    "passed": 2
   },
   "failedTestCases": [],
   "suites": [
@@ -14,6 +14,24 @@
         {
           "passed": true,
           "description": "The API should should not allow users to add a product to the cart if not logged In"
+        },
+        {
+          "passed": true,
+          "description": "The API should should allow users to add a product to the cart by passing the productId and quantity as query parameters."
+        }
+      ]
+    },
+    {
+      "suiteName": "DELETE /api/cart/:itemId",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "The API should should allow a logged in user to delete a cart item from the cart by passing cart item id as params"
+        },
+        {
+          "passed": true,
+          "description": "The API should should allow a logged in user to delete a cart item from the cart by passing invalid cart item id as params"
         }
       ]
     }

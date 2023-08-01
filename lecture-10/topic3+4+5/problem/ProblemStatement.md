@@ -2,7 +2,7 @@
 
 # Introduction + Scenario:
 
-In an E-commerce project, you are responsible for implementing the "addToCartController," "removeFromCartController," "addToCart" (Model), and "removeFromCart" functions. These functions handle adding or removing items from the user's cart. User authentication is done through JWT tokens. The "addToCartController" should add new items to the cart or update the quantity if the product already exists. 
+In an E-commerce project, you are responsible for implementing the "addToCartController," "removeFromCartController," "addToCart" (Model), and "removeFromCart" functions. These functions handle adding or removing items from the user's cart. User authentication is done through JWT tokens. The "addToCartController" should add new items to the cart or update the quantity if the product already exists.
 
 (The productId and quantity should be passed with query params and userId to be fetched the jwt token)
 

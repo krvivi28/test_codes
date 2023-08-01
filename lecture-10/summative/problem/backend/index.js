@@ -5,10 +5,6 @@ const app = express();
 // Import the necessary modules here
 // Write your code here
 
-
-
 app.use("/api/v1/emp", empRoutes);
 
-app.listen(4000, () => {
-  console.log("server is listening on port 4000");
-});
+export default app;

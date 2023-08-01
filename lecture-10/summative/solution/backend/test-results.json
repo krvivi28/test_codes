@@ -1,0 +1,21 @@
+{
+  "runtime": 375,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "Testing front-end html data",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "frontend part, needs to fetch a list of employees from the API 'http://localhost:4000/api/v1/emp' and display it on the HTML page"
+        }
+      ]
+    }
+  ]
+}

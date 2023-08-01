@@ -7,7 +7,7 @@ export class cartModel {
     this.quantity = Number(quantity);
   }
 }
-const cartItems = [new cartModel(1, 2, 5), new cartModel(3, 3, 10)];
+const cartItems = [new cartModel(1, 2, 5), new cartModel(2, 3, 10)];
 
 export const addToCart = (userId, productId, quantity) => {
   let newCartItem = new cartModel(userId, productId, quantity);
@@ -26,6 +26,7 @@ export const addToCart = (userId, productId, quantity) => {
 };
 
 export const removeFromCart = (userId, cartItemId) => {
+  console.log(userId, cartItemId);
   let cartItemInd = cartItems.findIndex((item) => {
     return item.id == cartItemId && item.userId == userId;
   });
@@ -34,6 +35,13 @@ export const removeFromCart = (userId, cartItemId) => {
     cartItems.splice(cartItemInd, 1);
     return { success: true, deletedCartItem: itemToDelete };
   } else {
-    return { success: false, msg: "operation not allowed" };
+    return {
+      success: false,
+      msg: "operation not allowed",
+    };
+    // return {
+    //   success: false,
+    //   msg: "no cart item available for this cart item id",
+    // };
   }
 };

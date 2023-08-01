@@ -10,9 +10,11 @@ export const addToCartController = (req, res) => {
   }
   let addStatus = addToCart(userId, productId, quantity);
   if (addStatus.success) {
-    return res.status(201).json(addStatus);
+    return res.status(200).json(addStatus);
   } else {
-    res.status(400).json({ success: false, msg: "some error occured" });
+    res
+      .status(400)
+      .json({ success: false, msg: "invalid id for the cart item" });
   }
   res.send(req.query);
 };
