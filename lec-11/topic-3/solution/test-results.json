@@ -1,0 +1,21 @@
+{
+  "runtime": 602,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "POST /api/user",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "Accessing this API should result in the logging of specific information for this route, including the request timestamp, URL, and request body"
+        }
+      ]
+    }
+  ]
+}

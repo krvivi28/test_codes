@@ -1,0 +1,13 @@
+
+Sat Aug 05 2023 21:22:56 GMT+0530 (India Standard Time)
+ req URL: /api/user/register
+ reqBody: {"name":"codingninjas","email":"cn@gmail.com","password":"Ninjas@123"} 
+
+Sat Aug 05 2023 21:23:09 GMT+0530 (India Standard Time)
+ req URL: /api/user/register
+ reqBody: {"name":"vivek","email":"cn@gmail.com","password":"Ninjas@123"} 
+
+Tue Aug 08 2023 01:49:39 GMT+0530 (India Standard Time)
+ req URL: /api/user
+ reqBody: {"email":"test@gmail.com","password":"password@123"} 
+

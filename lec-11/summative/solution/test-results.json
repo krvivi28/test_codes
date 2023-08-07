@@ -1,0 +1,21 @@
+{
+  "runtime": 612,
+  "percentageScore": 100,
+  "count": {
+    "total": 1,
+    "passed": 1
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "GET /",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "The response should be 'testing app-level error handling middleware,' as we intentionally threw this custom error at the '/' controller route with a status code of 404. It should log the error to the error.log file."
+        }
+      ]
+    }
+  ]
+}
