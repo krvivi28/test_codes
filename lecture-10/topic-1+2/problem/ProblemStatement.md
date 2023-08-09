@@ -7,8 +7,13 @@ You are working on an E-commerce project and have been assigned the task of impl
 # Objectives:
 
 Implement the "rateProduct" controller for the route "api/product/rateproduct" that handles user ratings for products.
+
+Pass the userId, productId, and rating as query parameters. For example: http://localhost:3000/api/product/rateproduct?userId=2&productId=3&rating=4.
+
 Validate user input for user ID, product ID, and rating, responding with appropriate JSON objects for invalid cases.
+
 Ensure that product ratings fall within the range of 0 to 5.
+
 Provide a successful response containing the product details, including the updated ratings, in case of valid input.
 
 Expected Output:
