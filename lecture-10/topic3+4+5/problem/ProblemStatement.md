@@ -1,35 +1,30 @@
 # Title: Efficient E-commerce Cart Management System
 
-# Introduction + Scenario:
+# Introduction and Scenario
 
-In this E-commerce project, your task is to enhance the cart management system by implementing the "addToCartController," "removeFromCartController," "addToCart" (Model), and "removeFromCart" (Model) functions. These functions are essential for adding, updating, and removing items from a user's shopping cart. User authentication is achieved through JWT tokens, providing a secure environment.
+You are a developer in a thriving e-commerce venture. The current cart system has limitations that have led to user dissatisfaction. Your responsibility is to enhance the cart's functionality by implementing distinct cart controllers for adding and removing items. Additionally, you need to develop corresponding model functions for these cart features, ensuring a seamless shopping experience.
 
-To add items to the cart, the "addToCartController" will utilize the 'addToCart' function within the cart Model. This function should not only enable adding new items but also updating the quantity of existing products. The data, including productId and quantity, must be passed through query parameters (e.g., http://localhost:3000/api/cart/?productId=6&quantity=5).
+The process begins with user login since the cart API is secured. After logging in, users can utilize the cart API routes to add, update, and remove items from their carts.
 
-As we store the userID and JWT in cookies simultaneously when a user attempts to log in (refer to the 'loginUser' controller within 'features/user' for better comprehension), the userID can be easily retrieved from cookies whenever needed for operations that require the userID.
+The user ID and JWT are stored in cookies simultaneously during user login (refer to the 'loginUser' controller within 'features/user' for better comprehension). The user ID can be easily retrieved from cookies whenever needed for operations requiring the user ID. The user ID is present in the JWT payload and accessible as req.userId.
 
-On the flip side, the "removeFromCartController" will utilize the 'removeFromCart' function in the cart Model to delete items from the user's cart. It's essential to ensure proper validation and secure cart management, contributing to a seamless shopping experience. The userId is present in the JWT payload, accessible as req.userId.
+# Objectives
 
-Since the cart API is secured, the process begins with user login. Once logged in, users can use the cart API routes for adding, updating, and removing items from their cart.
+Implement the "addToCartController" and its respective cart model function to manage item addition and updating in the cart based on query parameters. The "addToCartController" will use the 'addToCart' function within the cart model to add items to the cart. This function should enable adding new items and updating the quantity of existing products. The data, including product ID and quantity, must be passed through query parameters (e.g., http://localhost:3000/api/cart/?productId=6&quantity=5).
 
-# Objectives:
+Implement the "removeFromCartController". This controller should use the 'removeFromCart' function in the cart model to delete items from the user's cart. To delete a cart item, use the item's ID provided in the request parameters (e.g., http://localhost:3000/api/cart/{item_id}).
 
-Implement the "addToCartController" to manage item addition and updates in the cart based on query parameters.
-Implement the "removeFromCartController" to enable deletion of cart items using the item's ID provided in the request parameters (e.g., http://localhost:3000/api/cart/{item_id}) and leveraging the JWT payload.
-Implement efficient "addToCart" and "removeFromCart" Model functions for streamlined cart item management.
-
-# Expected Output:
+# Expected Output
 
 Expected Output Video Link:
 https://drive.google.com/file/d/1OKi4z485EwiTnMO6Z9h49iPKO1KQEDWR/view?usp=sharing
 
-Upon successfully adding an item to the cart using the "addToCartController," the response should be in the following format:
+1. Upon successfully adding an item to the cart using the "addToCartController," the response should follow this format:
 
 {
 "success": true,
 "item": [user's cart items]
 }
-
 For example:
 POST: http://localhost:3000/api/cart/?productId=6&quantity=10
 {
@@ -50,13 +45,12 @@ POST: http://localhost:3000/api/cart/?productId=6&quantity=10
 ]
 }
 
-Upon successfully deleting an item using the "removeFromCartController," the response should follow this structure:
+2. Upon successfully deleting an item using the "removeFromCartController," the response should follow this structure:
 
 {
 "success": true,
 "deletedCartItem": [deleted item details]
 }
-
 For example:
 DELETE: http://localhost:3000/api/cart/1
 {
@@ -69,7 +63,7 @@ DELETE: http://localhost:3000/api/cart/1
 }
 }
 
-If the "removeFromCartController" receives an invalid ID for cart item deletion, the response should be:
+3. If the "removeFromCartController" receives an invalid ID for cart item deletion, the response should be:
 
 DELETE: http://localhost:3000/api/cart/100
 {
@@ -77,8 +71,7 @@ DELETE: http://localhost:3000/api/cart/100
 "msg": "operation not allowed"
 }
 
-# Notes/Hints:
+# Notes/Hints
 
 The "addToCartController" must perform input validation and JWT token verification before processing the request.
 Ensure that the "removeFromCartController" confirms the existence of the item in the user's cart before proceeding with deletion.
-Consider utilizing suitable data structures like dictionaries/maps to optimize cart management efficiency.
