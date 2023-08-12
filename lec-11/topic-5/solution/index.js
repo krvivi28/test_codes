@@ -5,7 +5,6 @@ import {
   customErrorHandler,
   errorHandlerMiddleware,
 } from "./src/middlewares/errorHandler.js";
-
 const app = express();
 
 app.use(express.json());
@@ -13,16 +12,23 @@ app.use(express.json());
 app.use("/api/user", userRoutes);
 
 app.get("/", (req, res) => {
+  res.status(200).send("welcome to CN");
+});
+
+app.get("/test-custom-error", (req, res) => {
   throw new customErrorHandler(
-    404,
-    "testing app level error handling middleware"
+    505,
+    "testing app level custom error handling middleware"
   );
 });
 
-// Middleware to handle invalid routes
+app.get("/test-unhandled-error", (req, res) => {
+  throw "Unknown Server Error";
+});
+
 app.use(invalidRoutesHandlerMiddleware);
 
-// Middleware to handle application errors
+// Middleware to handle errors
 app.use(errorHandlerMiddleware);
 
 export default app;

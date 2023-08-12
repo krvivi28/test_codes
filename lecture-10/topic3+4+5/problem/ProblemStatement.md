@@ -4,7 +4,9 @@
 
 In this E-commerce project, your task is to enhance the cart management system by implementing the "addToCartController," "removeFromCartController," "addToCart" (Model), and "removeFromCart" (Model) functions. These functions are essential for adding, updating, and removing items from a user's shopping cart. User authentication is achieved through JWT tokens, providing a secure environment.
 
-To add items to the cart, the "addToCartController" will utilize the 'addToCart' function within the cart Model. This function should not only enable adding new items but also updating the quantity of existing products. The data, including productId and quantity, must be passed through query parameters (e.g., http://localhost:3000/api/cart/?productId=6&quantity=5). User identification is fetched using the JWT token, which is implemented inside src/middlewares/jwtAuth.js.
+To add items to the cart, the "addToCartController" will utilize the 'addToCart' function within the cart Model. This function should not only enable adding new items but also updating the quantity of existing products. The data, including productId and quantity, must be passed through query parameters (e.g., http://localhost:3000/api/cart/?productId=6&quantity=5).
+
+As we store the userID and JWT in cookies simultaneously when a user attempts to log in (refer to the 'loginUser' controller within 'features/user' for better comprehension), the userID can be easily retrieved from cookies whenever needed for operations that require the userID.
 
 On the flip side, the "removeFromCartController" will utilize the 'removeFromCart' function in the cart Model to delete items from the user's cart. It's essential to ensure proper validation and secure cart management, contributing to a seamless shopping experience. The userId is present in the JWT payload, accessible as req.userId.
 

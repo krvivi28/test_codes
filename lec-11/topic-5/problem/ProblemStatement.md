@@ -2,20 +2,16 @@
 
 # Introduction + Scenario:
 
-In an e-commerce Node.js project, develop an advanced error handling middleware, 'src/middlewares/errorHandler.js,' vital for maintaining a robust user experience. This middleware, integrated into the index file, must adeptly manage errors arising from various operations within the dynamic e-commerce environment. It should ensure that client responses contain precise user-defined error codes and messages, while unhandled errors must trigger a "500 Internal Server Error" with the message 'oops! something went wrong...Try again later!'
+In the given e-commerce Node.js project, Implement an error-handling middleware using the Error class inside 'src/middlewares/errorHandler.js'. This middleware is employed at the application level to manage errors arising from various operations. It should be designed to capture intentionally thrown errors with custom status codes and error messages. Unhandled errors should trigger a "500" status code along with the error message "Oops! Something went wrong... Please try again later!".
 
 # Objectives:
 
-Implement the 'src/middlewares/errorHandler.js' middleware to effectively capture application-level errors.
+Implement the 'src/middlewares/errorHandler.js' middleware to effectively capture errors.
 
-Seamlessly integrate the middleware into the index file to oversee error management during all operations.
+Capture intentionally thrown errors with customized status codes and messages.
 
-Skillfully communicate with clients by providing appropriate HTTP status codes along with informative error messages.
+Implement the logic to handle unhandled errors with a default "500" status code and a user-friendly error message.
 
 # Sample Output:
 
-https://files.codingninjas.in/screenshot-2023-08-07-at-12-17-38-pm-29824.png
-
-# Notes/Hints:
-
-Rigorously test the middleware with diverse error scenarios.
+https://files.codingninjas.in/topic-5-custom-error-29898.gif

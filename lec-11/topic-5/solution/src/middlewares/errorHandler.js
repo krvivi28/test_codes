@@ -11,4 +11,5 @@ export const errorHandlerMiddleware = (err, req, res, next) => {
   } else {
     res.status(500).send("oops! something went wrong...Try again later!");
   }
+  next();
 };

@@ -1,19 +1,29 @@
 {
-  "runtime": 411,
+  "runtime": 507,
   "percentageScore": 100,
   "count": {
-    "total": 1,
-    "passed": 1
+    "total": 2,
+    "passed": 2
   },
   "failedTestCases": [],
   "suites": [
     {
-      "suiteName": "GET /",
+      "suiteName": "GET /test-custome-error",
       "passed": true,
       "testCases": [
         {
           "passed": true,
-          "description": "The response should be 'testing app-level error handling middleware,' as we intentionally threw this custom error at the '/' controller route with a status code of 404. It should log the error to the error.log file."
+          "description": "The response should be 'testing app-level custom error handling middleware,' as we intentionally threw this custom error with a status code of 505"
+        }
+      ]
+    },
+    {
+      "suiteName": "GET /test-unhandled-error",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "Testing unhandled errors must trigger a '500' Internal Server Error with the message 'oops! something went wrong...Try again later!"
         }
       ]
     }

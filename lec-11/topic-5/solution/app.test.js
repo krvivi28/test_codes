@@ -1,10 +1,20 @@
 import request from "supertest";
 import app from "./index.js";
-describe("GET /", () => {
-  it("The response should be 'testing app-level error handling middleware,' as we intentionally threw this custom error at the '/' controller route with a status code of 404", async () => {
-    const response = await request(app).get("/");
-    expect(response.statusCode).toBe(404);
+describe("GET /test-custome-error", () => {
+  it("The response should be 'testing app-level custom error handling middleware,' as we intentionally threw this custom error with a status code of 505", async () => {
+    const response = await request(app).get("/test-custome-error");
+    expect(response.statusCode).toBe(505);
     expect(response.text).not.toBe("");
-    expect(response.text).toBe("testing app level error handling middleware");
+    expect(response.text).toMatch(
+      "testing app level custom error handling middleware"
+    );
+  });
+});
+
+describe("GET /test-unhandled-error", () => {
+  it("Testing unhandled errors must trigger a '500' Internal Server Error with the message 'oops! something went wrong...Try again later!", async () => {
+    const response = await request(app).get("/test-unhandled-error");
+    expect(response.statusCode).toBe(500);
+    expect(response.text).not.toBe("");
   });
 });
