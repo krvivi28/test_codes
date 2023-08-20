@@ -1,0 +1,51 @@
+{
+  "runtime": 509,
+  "percentageScore": 100,
+  "count": {
+    "total": 2,
+    "passed": 2
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "MongoDB connection functions",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "connectToDB function called connect method with URL"
+        },
+        {
+          "passed": true,
+          "description": "getDB function returns a 'bucketListDB' db client"
+        }
+      ]
+    },
+    {
+      "suiteName": "Testing expense routes",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "creates a new expense"
+        },
+        {
+          "passed": true,
+          "description": "fetches a specific expense by id"
+        },
+        {
+          "passed": true,
+          "description": "fetches all expenses"
+        },
+        {
+          "passed": true,
+          "description": "filters expenses based on criteria"
+        },
+        {
+          "passed": true,
+          "description": "adds a tag to a specific expense"
+        }
+      ]
+    }
+  ]
+}

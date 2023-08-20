@@ -1,0 +1,35 @@
+{
+  "runtime": 525,
+  "percentageScore": 100,
+  "count": {
+    "total": 2,
+    "passed": 2
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "MongoDB connection functions",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "connectToDB function called connect method with URL"
+        },
+        {
+          "passed": true,
+          "description": "getDB function returns a 'confession' db client"
+        }
+      ]
+    },
+    {
+      "suiteName": "POST /api/confessions",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "it creates a new confession"
+        }
+      ]
+    }
+  ]
+}
