@@ -24,6 +24,7 @@ describe("MongoDB connection functions", () => {
     expect(connectSpy).toHaveBeenCalledWith(
       expect.stringMatching(/mongodb:\/\/localhost:\d+/)
     );
+    expect(connectSpy).toHaveBeenCalledTimes(1);
   });
 
   it("getDB function returns a 'confession' db client", () => {

@@ -32,5 +32,10 @@ describe("get max", () => {
     expect(consoleSpy).toHaveBeenCalledWith(
       "The maximum of the two numbers is: 10"
     );
+
+    const regex = /(max|large)/i;
+    expect(consoleSpy.mock.calls[consoleSpy.mock.calls.length - 1][0]).toMatch(
+      regex
+    );
   });
 });
