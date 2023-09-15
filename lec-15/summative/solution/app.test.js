@@ -12,10 +12,19 @@ afterAll(async () => {
 });
 
 beforeEach(async () => {
-  const collections = mongoose.connection.collections;
-  for (const key in collections) {
-    await collections[key].deleteMany({});
-  }
+  await mongoose.connection.db.dropDatabase();
+});
+
+describe("connectToDb", () => {
+  beforeEach(() => {
+    mongoose.connect = jest.fn();
+    jest.clearAllMocks();
+  });
+  it("should successfully connect to the database", async () => {
+    mongoose.connect.mockResolvedValueOnce({});
+    await connectToDb();
+    expect(mongoose.connect).toHaveBeenCalledWith(process.env.URI);
+  });
 });
 
 describe("User Registration", () => {
@@ -40,20 +49,138 @@ describe("User Registration", () => {
   });
 });
 
-// describe("User Registration", () => {
-//   it("should handle registration with missing or invalid data", async () => {
-//     const userData = {};
-//     const response = await request(app)
-//       .post("/codingninjas/api/user/register")
-//       .send(userData);
-//     // console.log("test res is", response);
-//     expect(response.statusCode).toBe(400);
-//     expect(response.body.success).toBe(false);
-//     // expect(response.body.msg).toBe("user registration successful");
-//     // expect(response.body.res).toHaveProperty("_id");
-//     // expect(response.body.res.name).toBe(userData.name);
-//   }, 10000);
-// });
+describe("User Registration Validation", () => {
+  it("registration not allowed with missing name (name is required)", async () => {
+    const userData = {
+      email: "tesrfyyfrt@example.com",
+      mobile: "12frgg34567890",
+      age: 25,
+      password: "testpassword",
+      type: "student",
+    };
+    const response = await request(app)
+      .post("/codingninjas/api/user/register")
+      .send(userData);
+    expect(response.statusCode).toBe(400);
+    expect(response.body.success).toBe(false);
+  });
+});
+describe("User Registration Validation", () => {
+  it("registration not allowed with invalid name (length of name should be greater than equal to 3)", async () => {
+    const userData = {
+      name: "vi",
+      email: "tesrfyyfrt@example.com",
+      mobile: "12frgg34567890",
+      age: 25,
+      password: "testpassword",
+      type: "student",
+    };
+    const response = await request(app)
+      .post("/codingninjas/api/user/register")
+      .send(userData);
+    expect(response.statusCode).toBe(400);
+    expect(response.body.success).toBe(false);
+  });
+});
+describe("User Registration Validation", () => {
+  it("registration not allowed with invalid email)", async () => {
+    const userData = {
+      name: "vivek",
+      email: "tesrfyyfrt@example",
+      mobile: "12frgg34567890",
+      age: 25,
+      password: "testpassword",
+      type: "student",
+    };
+    const response = await request(app)
+      .post("/codingninjas/api/user/register")
+      .send(userData);
+    expect(response.statusCode).toBe(400);
+    expect(response.body.success).toBe(false);
+  });
+});
+describe("User Registration Validation", () => {
+  it("registration not allowed with missing email (email is required))", async () => {
+    const userData = {
+      name: "vivek",
+      mobile: "12frgg34567890",
+      age: 25,
+      password: "testpassword",
+      type: "student",
+    };
+    const response = await request(app)
+      .post("/codingninjas/api/user/register")
+      .send(userData);
+    expect(response.statusCode).toBe(400);
+    expect(response.body.success).toBe(false);
+  });
+});
+describe("User Registration Validation", () => {
+  it("registration not allowed with missing age (age is required))", async () => {
+    const userData = {
+      name: "vivek",
+      email: "krvivi28@gmail.com",
+      mobile: "12frgg34567890",
+      password: "testpassword",
+      type: "student",
+    };
+    const response = await request(app)
+      .post("/codingninjas/api/user/register")
+      .send(userData);
+    expect(response.statusCode).toBe(400);
+    expect(response.body.success).toBe(false);
+  });
+});
+describe("User Registration Validation", () => {
+  it("registration not allowed with inavalid age (age should be greater than 0))", async () => {
+    const userData = {
+      name: "vivek",
+      email: "krvivi28@gmail.com",
+      mobile: "12frgg34567890",
+      age: 0,
+      password: "testpassword",
+      type: "student",
+    };
+    const response = await request(app)
+      .post("/codingninjas/api/user/register")
+      .send(userData);
+    expect(response.statusCode).toBe(400);
+    expect(response.body.success).toBe(false);
+  });
+});
+describe("User Registration Validation", () => {
+  it("registration not allowed without type (type is required)", async () => {
+    const userData = {
+      name: "vivek",
+      email: "krvivi28@gmail.com",
+      mobile: "12frgg34567890",
+      age: 22,
+      password: "testpassword",
+    };
+    const response = await request(app)
+      .post("/codingninjas/api/user/register")
+      .send(userData);
+    expect(response.statusCode).toBe(400);
+    expect(response.body.success).toBe(false);
+  });
+});
+describe("User Registration Validation", () => {
+  it("registration not allowed with inavalid type (can be either 'student,' 'fresher,' or 'experienced'))", async () => {
+    const userData = {
+      name: "vivek",
+      email: "krvivi28@gmail.com",
+      mobile: "1234567890",
+      age: 15,
+      password: "testpassword",
+      type: "educator",
+    };
+    const response = await request(app)
+      .post("/codingninjas/api/user/register")
+      .send(userData);
+    expect(response.statusCode).toBe(400);
+    expect(response.body.success).toBe(false);
+  });
+});
 
 describe("User Login", () => {
   it("should log in a user with valid credentials", async () => {
@@ -91,7 +218,7 @@ describe("User Login", () => {
     };
     await request(app).post("/codingninjas/api/user/register").send(userData);
     const invalidCredentials = {
-      email: "test@example.com", // Use the email of the user registered in the previous test
+      email: "test@example.com",
       password: "testpassword2",
     };
 
@@ -103,46 +230,80 @@ describe("User Login", () => {
   });
 });
 
-// describe("Update User Password", () => {
-//   it("should update the user password", async () => {
-//     const newPasswordData = {
-//       newPassword: "newtestpassword",
-//     };
+describe("Update User Password", () => {
+  it("should update the user password", async () => {
+    const newPasswordData = {
+      newPassword: "newtestpassword",
+    };
 
-//     // Assuming you have a user authenticated and you have their token
-//     // You can use the token for authentication
-//     const token = "your_authentication_token_here";
+    const userData = {
+      name: "Test User",
+      email: "test@example.com",
+      mobile: "9123456789",
+      age: 25,
+      password: "testpassword",
+      type: "student",
+    };
+    await request(app).post("/codingninjas/api/user/register").send(userData);
+    const userCredentials = {
+      email: "test@example.com", // Use the email of the user registered in the previous test
+      password: "testpassword",
+    };
 
-//     const response = await request(app)
-//       .post("/codingninjas/api/user/update/password")
-//       .set("Cookie", [`jwtToken=${token}`])
-//       .send(newPasswordData)
-//       .expect(201);
+    const loginResponse = await request(app)
+      .post("/codingninjas/api/user/login")
+      .send(userCredentials);
 
-//     expect(response.body.success).toBe(true);
-//     expect(response.body.msg).toBe("password updated successfully");
-//     expect(response.body.res).toHaveProperty("_id");
-//     // Add more assertions as needed
-//   });
+    console.log(loginResponse);
+    const token = loginResponse.body.token;
 
-//   it("should handle invalid password update request", async () => {
-//     const invalidPasswordData = {
-//       // Provide invalid password data (e.g., missing required fields)
-//     };
+    const response = await request(app)
+      .post("/codingninjas/api/user/update/password")
+      .set("Cookie", [`jwtToken=${token}`])
+      .send(newPasswordData)
+      .expect(201);
 
-//     // Assuming you have a user authenticated and you have their token
-//     // You can use the token for authentication
-//     const token = "your_authentication_token_here";
+    expect(response.body.success).toBe(true);
+    expect(response.body.msg).toBe("password updated successfully");
+    expect(response.body.res).toHaveProperty("_id");
+  });
+});
 
-//     const response = await request(app)
-//       .post("/codingninjas/api/user/update/password")
-//       .set("Cookie", [`jwtToken=${token}`])
-//       .send(invalidPasswordData)
-//       .expect(400);
+describe("Update User Password", () => {
+  it("user should not be able to login with old password after updating the password", async () => {
+    const newPasswordData = {
+      newPassword: "newtestpassword",
+    };
 
-//     expect(response.body.success).toBe(false);
-//     expect(response.body.error).toHaveProperty("statusCode");
-//     expect(response.body.error).toHaveProperty("msg");
-//     // Add more assertions as needed
-//   });
-// });
+    const userData = {
+      name: "Test User",
+      email: "test@example.com",
+      mobile: "9123456789",
+      age: 25,
+      password: "testpassword",
+      type: "student",
+    };
+    await request(app).post("/codingninjas/api/user/register").send(userData);
+    const userCredentials = {
+      email: "test@example.com", // Use the email of the user registered in the previous test
+      password: "testpassword",
+    };
+
+    const loginResponse = await request(app)
+      .post("/codingninjas/api/user/login")
+      .send(userCredentials);
+
+    const token = loginResponse.body.token;
+    console.log("token in updatepassword is", token);
+
+    const response = await request(app)
+      .post("/codingninjas/api/user/update/password")
+      .set("Cookie", [`jwtToken=${token}`])
+      .send(newPasswordData);
+
+    const newloginResponse = await request(app)
+      .post("/codingninjas/api/user/login")
+      .send(userCredentials)
+      .expect(400);
+  });
+});

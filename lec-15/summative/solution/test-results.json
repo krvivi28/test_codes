@@ -1,0 +1,97 @@
+{
+  "runtime": 5098,
+  "percentageScore": 100,
+  "count": {
+    "total": 5,
+    "passed": 5
+  },
+  "failedTestCases": [],
+  "suites": [
+    {
+      "suiteName": "connectToDb",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should successfully connect to the database"
+        }
+      ]
+    },
+    {
+      "suiteName": "User Registration",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should register a new user with valid data"
+        }
+      ]
+    },
+    {
+      "suiteName": "User Registration Validation",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "registration not allowed with missing name (name is required)"
+        },
+        {
+          "passed": true,
+          "description": "registration not allowed with invalid name (length of name should be greater than equal to 3)"
+        },
+        {
+          "passed": true,
+          "description": "registration not allowed with invalid email)"
+        },
+        {
+          "passed": true,
+          "description": "registration not allowed with missing email (email is required))"
+        },
+        {
+          "passed": true,
+          "description": "registration not allowed with missing age (age is required))"
+        },
+        {
+          "passed": true,
+          "description": "registration not allowed with inavalid age (age should be greater than 0))"
+        },
+        {
+          "passed": true,
+          "description": "registration not allowed without type (type is required)"
+        },
+        {
+          "passed": true,
+          "description": "registration not allowed with inavalid type (can be either 'student,' 'fresher,' or 'experienced'))"
+        }
+      ]
+    },
+    {
+      "suiteName": "User Login",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should log in a user with valid credentials"
+        },
+        {
+          "passed": true,
+          "description": "should handle login with invalid credentials"
+        }
+      ]
+    },
+    {
+      "suiteName": "Update User Password",
+      "passed": true,
+      "testCases": [
+        {
+          "passed": true,
+          "description": "should update the user password"
+        },
+        {
+          "passed": true,
+          "description": "user should not be able to login with old password after updating the password"
+        }
+      ]
+    }
+  ]
+}

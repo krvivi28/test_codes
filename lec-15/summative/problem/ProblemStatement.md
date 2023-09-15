@@ -40,7 +40,7 @@ Maintain these specified return types as the 'userLoginRepo' function is utilize
 
 # Expected Output:
 
-Video Link:
+Video Link: https://drive.google.com/drive/folders/16BmSk1-32gsCMGvi9pUlG0--CB_zL6N-?usp=sharing
 
 # Resources:
 
@@ -56,4 +56,4 @@ Mongoose: https://mongoosejs.com/docs/validation.html
 
 4. Don't change the pre-written code.
 
-5. Changes are meant to be done only in use repository.
+5. Changes are meant to be done only in 'user' repository.

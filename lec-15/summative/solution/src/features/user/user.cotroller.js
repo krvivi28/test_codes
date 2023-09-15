@@ -13,7 +13,7 @@ export const userRegisteration = async (req, res, next) => {
   if (resp.success) {
     res.status(201).json({
       success: true,
-      msg: "user registeration successful",
+      msg: "user registration successful",
       res: resp.res,
     });
   } else {
