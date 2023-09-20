@@ -29,7 +29,7 @@ For further details, please refer to the provided video link under '# Expected O
 
 4. Implement the 'userLoginRepo' function within the user repository to manage user login operations. Ensure that it returns the following:
 
-For valid credentials: An object with the structure { success: true, res: updated_user_document }.
+For valid credentials: An object with the structure { success: true, res: user_document }.
 
 For errors or invalid credentials: An object with the structure { success: false, error: { statusCode: status_code, msg: "error message" } }.
 
