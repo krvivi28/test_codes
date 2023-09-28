@@ -51,6 +51,8 @@ Note: Some of the controller implementations have been provided as default code,
 
 # Expected Output:
 
+Video Link: https://drive.google.com/drive/folders/18qqnaJruHD1yTe-S-1R2utJWu7OlYFfz?usp=sharing
+
 # Route and Query Parameters:
 
 For liking a job, use the following route:

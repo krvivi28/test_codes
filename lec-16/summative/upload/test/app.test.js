@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import request from "supertest";
-import app from "./app.js";
-import connectToDb from "./src/config/db.js";
+import app from "./index.js";
+import { connectToDb } from "./src/config/db.js";
 
 describe("Book API Endpoints", () => {
   beforeAll(async () => {
